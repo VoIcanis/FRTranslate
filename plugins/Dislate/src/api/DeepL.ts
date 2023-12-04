@@ -11,9 +11,9 @@ const translate = async (text: string, source_lang: string = "auto", target_lang
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                text,
-                source_lang,
-                target_lang
+                text: text,
+                source_lang: source_lang,
+                target_lang: target_lang
             })
         })).json()
         if (data.code !== 200) throw Error(`Failed to translate text from DeepL: ${data.message}`)
